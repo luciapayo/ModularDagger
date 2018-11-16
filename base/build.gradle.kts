@@ -1,10 +1,5 @@
-import com.android.build.gradle.ProguardFiles.getDefaultProguardFile
-import org.gradle.internal.impldep.com.amazonaws.PredefinedClientConfigurations.defaultConfig
-import org.jetbrains.kotlin.config.KotlinCompilerVersion
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-
 plugins {
-    id("com.android.application")
+    id("com.android.feature")
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
@@ -12,8 +7,9 @@ plugins {
 
 android {
     compileSdkVersion(AndroidVersions.compileSdkVersion)
+    baseFeature = true
+
     defaultConfig {
-        applicationId = "com.n26.modulardagger"
         minSdkVersion(AndroidVersions.minSdkVersion)
         targetSdkVersion(AndroidVersions.targetSdkVersion)
         versionCode = 1
@@ -28,5 +24,10 @@ android {
 }
 
 dependencies {
+    // Kotlin
+    api(Dependencies.kotlin_stdlib_jdk7)
+    api(Dependencies.ktx_core)
 
+    // AndroidX
+    api(Dependencies.app_compat)
 }
