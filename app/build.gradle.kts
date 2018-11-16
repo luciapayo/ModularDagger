@@ -28,4 +28,10 @@ android {
 }
 
 dependencies {
+    // Kotlin
+    implementation(Dependencies.kotlin_stdlib_jdk7)
+    implementation(Dependencies.ktx_core)
+
+    // AndroidX
+    implementation(Dependencies.app_compat)
 }
