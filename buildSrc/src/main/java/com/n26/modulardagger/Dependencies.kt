@@ -1,3 +1,9 @@
+object AndroidVersions {
+    val compileSdkVersion = 28
+    val minSdkVersion = 21
+    val targetSdkVersion = 28
+}
+
 object Versions {
     val kotlin = "1.3.0"
     val gradle_plugin = "3.4.0-alpha02"
