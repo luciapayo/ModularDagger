@@ -10,6 +10,7 @@ object Versions {
     val appcompat = "1.0.1"
     val ktx_core = "1.0.1"
     val dagger2 = "2.19"
+    val material = "1.1.0-alpha01"
 }
 
 object Dependencies {
@@ -23,4 +24,5 @@ object Dependencies {
     val dagger2_android = "com.google.dagger:dagger-android:${Versions.dagger2}"
     val dagger2_android_support = "com.google.dagger:dagger-android-support:${Versions.dagger2}"
     val dagger2_android_processor = "com.google.dagger:dagger-android-processor:${Versions.dagger2}"
+    val material = "com.google.android.material:material:${Versions.material}"
 }

@@ -20,13 +20,12 @@ android {
         versionName = "1.0"
     }
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
+        getByName("release") {}
     }
 }
 
 dependencies {
 
+    // AndroidX
+    implementation(Dependencies.app_compat)
 }

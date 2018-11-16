@@ -16,8 +16,12 @@ android {
         versionName = "1.0"
     }
     buildTypes {
-        getByName("release") {
+        getByName("debug") {
             isMinifyEnabled = false
+            isDebuggable = true
+        }
+        getByName("release") {
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -27,9 +31,6 @@ dependencies {
     // Kotlin
     api(Dependencies.kotlin_stdlib_jdk7)
     api(Dependencies.ktx_core)
-
-    // AndroidX
-    api(Dependencies.app_compat)
 
     // Dagger2
     api(Dependencies.dagger2)
