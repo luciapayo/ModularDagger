@@ -20,10 +20,6 @@ android {
             isMinifyEnabled = false
             isDebuggable = true
         }
-        getByName("release") {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
     }
 }
 
@@ -35,9 +31,4 @@ dependencies {
     // Dagger2
     api(Dependencies.dagger2)
     kapt(Dependencies.dagger2_compiler)
-
-    // Dagger2 Android
-    api(Dependencies.dagger2_android)
-    api(Dependencies.dagger2_android_support)
-    kapt(Dependencies.dagger2_android_processor)
 }

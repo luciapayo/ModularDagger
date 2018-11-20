@@ -5,8 +5,8 @@ object AndroidVersions {
 }
 
 object Versions {
-    val kotlin = "1.3.0"
-    val gradle_plugin = "3.4.0-alpha02"
+    val kotlin = "1.2.71"
+    val gradle_plugin = "3.2.1"
     val appcompat = "1.0.1"
     val ktx_core = "1.0.1"
     val dagger2 = "2.19"

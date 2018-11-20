@@ -20,12 +20,17 @@ android {
         versionName = "1.0"
     }
     buildTypes {
-        getByName("release") {}
+        getByName("debug") {}
     }
 }
 
 dependencies {
 
+    implementation(project(":base"))
+
     // AndroidX
     implementation(Dependencies.app_compat)
+
+    // Dagger2
+    kapt(Dependencies.dagger2_compiler)
 }
