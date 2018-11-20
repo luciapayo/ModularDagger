@@ -20,7 +20,10 @@ android {
         versionName = "1.0"
     }
     buildTypes {
-        getByName("debug") {}
+        getByName("debug") {
+            isMinifyEnabled = false
+            isDebuggable = true
+        }
     }
 }
 
