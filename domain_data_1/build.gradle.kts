@@ -9,4 +9,6 @@ android {
     compileSdkVersion(AndroidVersions.compileSdkVersion)
 }
 
-dependencies { }
+dependencies {
+    implementation(project(":base"))
+}
