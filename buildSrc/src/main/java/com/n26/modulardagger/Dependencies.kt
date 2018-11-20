@@ -9,7 +9,7 @@ object Versions {
     val gradle_plugin = "3.2.1"
     val appcompat = "1.0.1"
     val ktx_core = "1.0.1"
-    val dagger2 = "2.19"
+    val dagger2 = "2.16"
     val material = "1.1.0-alpha01"
 }
 
