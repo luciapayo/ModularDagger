@@ -2,11 +2,12 @@ package com.n26.modulardagger
 
 import android.app.Application
 import com.n26.modulardagger.base.injection.AppScope
+import com.n26.modulardagger.presentation1.Presentation1ActivityModule
 import dagger.BindsInstance
 import dagger.Component
 
 @AppScope
-@Component(modules = [AppModule::class])
+@Component(modules = [AppModule::class, Presentation1ActivityModule::class])
 internal interface AppComponent {
 
     fun inject(app: ModularDaggerApp)

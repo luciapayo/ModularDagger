@@ -27,6 +27,7 @@ android {
 dependencies {
 
     implementation(project(":base"))
+    implementation(project(":presentation1"))
 
     // AndroidX
     implementation(Dependencies.app_compat)
