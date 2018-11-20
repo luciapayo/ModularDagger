@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.n26.modulardagger.presentation1">
+          package="com.n26.modulardagger.presentation_1">
     <application>
-        <activity android:name=".Presentation1Activity">
+        <activity android:name="com.n26.modulardagger.presentation_1.Presentation1Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -30,7 +30,7 @@ android {
 dependencies {
 
     implementation(project(":base"))
-    implementation(project(":presentation1"))
+    implementation(project(":presentation_1"))
 
     // AndroidX
     implementation(Dependencies.app_compat)

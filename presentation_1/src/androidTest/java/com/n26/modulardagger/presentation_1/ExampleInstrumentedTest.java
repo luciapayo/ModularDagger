@@ -1,9 +1,8 @@
-package com.n26.modulardagger.presentation1;
+package com.n26.modulardagger.presentation_1;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
