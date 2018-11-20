@@ -3,7 +3,7 @@ package com.n26.modulardagger.presentation1
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
-@Module(subcomponents = [Presentation1ActivityComponent::class])
+@Module
 abstract class Presentation1ActivityModule {
 
 //    @Binds
