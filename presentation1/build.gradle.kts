@@ -15,19 +15,9 @@ android {
         versionName = "1.0"
     }
     buildTypes {
-        getByName("debug") {
-            isMinifyEnabled = false
-            isDebuggable = true
-        }
+        getByName("debug") {}
     }
 }
 
 dependencies {
-    // Kotlin
-    api(Dependencies.kotlin_stdlib_jdk7)
-    api(Dependencies.ktx_core)
-
-    // Dagger2
-    api(Dependencies.dagger2)
-    kapt(Dependencies.dagger2_compiler)
 }
