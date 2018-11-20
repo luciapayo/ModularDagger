@@ -5,7 +5,7 @@ import android.app.Application
 class ModularDaggerApp : Application() {
 
     private val appComponent by lazy(LazyThreadSafetyMode.NONE) {
-        createAppComponent(applicationContext)
+        createAppComponent(this)
     }
 
     override fun onCreate() {
