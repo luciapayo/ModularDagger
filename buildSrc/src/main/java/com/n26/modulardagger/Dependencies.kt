@@ -21,8 +21,5 @@ object Dependencies {
     val app_compat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     val dagger2 = "com.google.dagger:dagger:${Versions.dagger2}"
     val dagger2_compiler = "com.google.dagger:dagger-compiler:${Versions.dagger2}"
-    val dagger2_android = "com.google.dagger:dagger-android:${Versions.dagger2}"
-    val dagger2_android_support = "com.google.dagger:dagger-android-support:${Versions.dagger2}"
-    val dagger2_android_processor = "com.google.dagger:dagger-android-processor:${Versions.dagger2}"
     val material = "com.google.android.material:material:${Versions.material}"
 }

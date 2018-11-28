@@ -16,7 +16,4 @@ dependencies {
 
     // Dagger2
     kapt(Dependencies.dagger2_compiler)
-
-    // Dagger2 Android
-    kapt(Dependencies.dagger2_android_processor)
 }
