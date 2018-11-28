@@ -31,6 +31,7 @@ dependencies {
 
     implementation(project(":base"))
     implementation(project(":presentation_1"))
+    implementation(project(":domain_data_1"))
 
     // AndroidX
     implementation(Dependencies.app_compat)

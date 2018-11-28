@@ -12,6 +12,7 @@ android {
 dependencies {
     implementation(project(":base"))
     api(project(":architecture_presentation"))
+    implementation(project(":domain_data_1"))
 
     // Dagger2
     kapt(Dependencies.dagger2_compiler)
