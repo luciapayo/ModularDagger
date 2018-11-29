@@ -10,6 +10,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":graph"))
+
     // Kotlin
     api(Dependencies.kotlin_stdlib_jdk7)
     api(Dependencies.ktx_core)

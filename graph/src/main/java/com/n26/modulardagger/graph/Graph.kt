@@ -1,7 +1,18 @@
 package com.n26.modulardagger.graph
 
-class Graph {
+interface Graph {
 
-    fun <T> createComponent(builder: Injector.Builder<T>): Injector<T> =
-        builder.build()
+    interface Builder {
+        fun build(): Graph
+    }
+}
+
+interface Injector<T> : Graph {
+
+    fun inject(t: T)
+
+    interface Builder<T> : Graph.Builder {
+
+        override fun build(): Injector<T>
+    }
 }
