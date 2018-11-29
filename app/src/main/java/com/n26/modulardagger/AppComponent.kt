@@ -2,27 +2,22 @@ package com.n26.modulardagger
 
 import android.app.Application
 import com.n26.modulardagger.base.injection.AppScope
-import com.n26.modulardagger.domain_data_1.data.Data1Module
+import com.n26.modulardagger.graph.Injector
 import dagger.BindsInstance
 import dagger.Component
 
 @AppScope
-@Component(modules = [AppModule::class, Data1Module::class])
-internal interface AppComponent {
+@Component(modules = [AppModule::class])
+internal interface AppComponent : Injector<ModularDaggerApp> {
 
-    fun inject(app: ModularDaggerApp)
+    override fun inject(app: ModularDaggerApp)
 
     @Component.Builder
-    interface Builder {
+    interface Builder : Injector.Builder<ModularDaggerApp> {
 
         @BindsInstance
         fun create(app: Application): Builder
 
-        fun build(): AppComponent
+        override fun build(): AppComponent
     }
 }
-
-internal fun createAppComponent(app: Application) =
-    DaggerAppComponent.builder()
-        .create(app)
-        .build()
