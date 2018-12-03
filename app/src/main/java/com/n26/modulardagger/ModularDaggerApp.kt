@@ -12,14 +12,14 @@ class ModularDaggerApp : Application(), HasGraphProvider {
     @Inject
     lateinit var sp: SharedPreferences
 
-    private val graph by lazy {
+    private val graphProvider by lazy {
         GraphProvider()
     }
 
-    override fun graphProvider(): GraphProvider = graph
+    override fun graphProvider(): GraphProvider = graphProvider
 
     private val appComponent by lazy(LazyThreadSafetyMode.NONE) {
-        graph.createInjector(DaggerAppComponent.builder().create(this))
+        graphProvider.createGraph(AppComponentCreator(this)) as AppComponent
     }
 
     override fun onCreate() {
@@ -28,3 +28,4 @@ class ModularDaggerApp : Application(), HasGraphProvider {
         Log.d("TAG", ">>> SP injected: ${sp.hashCode()}")
     }
 }
+

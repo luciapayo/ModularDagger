@@ -1,4 +1,4 @@
-package com.n26.modulardagger
+package com.n26.modulardagger.base.injection.modules
 
 import android.app.Application
 import android.content.Context

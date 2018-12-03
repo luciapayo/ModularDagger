@@ -1,10 +1,10 @@
 package com.n26.modulardagger.graph
 
+import java.util.*
+
 class GraphProvider {
 
-    fun <T> createInjector(builder: Injector.Builder<T>): Injector<T> =
-        builder.build()
+    private val graphMap: HashMap<Class<out Graph>, Graph> = HashMap()
 
-    fun createGraph(builder: Graph.Builder): Graph =
-        builder.build()
+    fun createGraph(graphCreator: GraphCreator): Graph = graphCreator.create()
 }
