@@ -25,7 +25,7 @@ internal abstract class AppComponent : Graph {
 
 internal class AppComponentCreator(private val app: Application) : GraphCreator {
 
-    override fun create(): AppComponent =
+    override fun create(): Graph =
         DaggerAppComponent
             .builder()
             .baseComponent(BaseComponentCreator(app).create())
