@@ -1,10 +1,11 @@
-package com.n26.modulardagger.base.injection
+package com.n26.modulardagger.base
 
 import android.app.Application
 import android.content.SharedPreferences
 import com.n26.modulardagger.base.injection.modules.AppModule
 import com.n26.modulardagger.base.network.NetworkComponent
 import com.n26.modulardagger.base.network.NetworkComponentCreator
+import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphCreator
 import dagger.BindsInstance
@@ -31,8 +32,7 @@ abstract class BaseComponent : Graph {
 class BaseComponentCreator(private val app: Application) : GraphCreator {
 
     override fun create(): BaseComponent =
-        DaggerBaseComponent
-            .builder()
+        DaggerBaseComponent.builder()
             .bind(app)
             .networkComponent(NetworkComponentCreator().create())
             .build()

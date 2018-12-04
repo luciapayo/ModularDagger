@@ -1,9 +1,9 @@
 package com.n26.modulardagger
 
 import android.app.Application
-import com.n26.modulardagger.base.injection.AppScope
-import com.n26.modulardagger.base.injection.BaseComponent
-import com.n26.modulardagger.base.injection.BaseComponentCreator
+import com.n26.modulardagger.base.BaseComponent
+import com.n26.modulardagger.base.BaseComponentCreator
+import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphCreator
 import dagger.Component

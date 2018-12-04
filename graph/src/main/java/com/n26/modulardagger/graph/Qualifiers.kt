@@ -1,4 +1,4 @@
-package com.n26.modulardagger.base.injection
+package com.n26.modulardagger.graph
 
 import javax.inject.Qualifier
 
