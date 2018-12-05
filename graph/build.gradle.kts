@@ -11,6 +11,8 @@ android {
 
 dependencies {
 
+    api(Dependencies.kotlin_stdlib_jdk7)
+
     // Dagger2
     api(Dependencies.dagger2)
     kapt(Dependencies.dagger2_compiler)

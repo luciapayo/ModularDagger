@@ -2,6 +2,7 @@ package com.n26.modulardagger.base.network
 
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphCreator
+import com.n26.modulardagger.graph.GraphProvider
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -32,8 +33,16 @@ internal interface NetworkComponent : Graph {
 
 internal class NetworkComponentCreator : GraphCreator {
 
-    override fun create(): NetworkComponent =
-        DaggerNetworkComponent
-            .builder()
-            .build()
+    override fun create(): NetworkComponent {
+        val component = GraphProvider.getGraph(NetworkComponent::class)
+            ?: createInternal()
+
+        return component as NetworkComponent
+    }
+
+    private fun createInternal(): NetworkComponent {
+        val component = DaggerNetworkComponent.create()
+        GraphProvider.storeGraph(component)
+        return component
+    }
 }

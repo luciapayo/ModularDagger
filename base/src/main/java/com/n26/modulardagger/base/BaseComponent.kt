@@ -8,6 +8,7 @@ import com.n26.modulardagger.base.network.NetworkComponentCreator
 import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphCreator
+import com.n26.modulardagger.graph.GraphProvider
 import dagger.BindsInstance
 import dagger.Component
 
@@ -31,9 +32,19 @@ abstract class BaseComponent : Graph {
 
 class BaseComponentCreator(private val app: Application) : GraphCreator {
 
-    override fun create(): BaseComponent =
-        DaggerBaseComponent.builder()
+    override fun create(): BaseComponent {
+        val component = GraphProvider.getGraph(BaseComponent::class)
+            ?: createInternal()
+
+        return component as BaseComponent
+    }
+
+    private fun createInternal(): BaseComponent {
+        val component = DaggerBaseComponent.builder()
             .bind(app)
             .networkComponent(NetworkComponentCreator().create())
             .build()
+        GraphProvider.storeGraph(component)
+        return component
+    }
 }

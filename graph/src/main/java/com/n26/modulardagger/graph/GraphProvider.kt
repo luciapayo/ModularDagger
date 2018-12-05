@@ -1,10 +1,15 @@
 package com.n26.modulardagger.graph
 
 import java.util.*
+import kotlin.reflect.KClass
 
-class GraphProvider {
+object GraphProvider {
 
-    private val graphMap: HashMap<Class<out Graph>, Graph> = HashMap()
+    private val graphMap: HashMap<KClass<out Graph>, Graph> = HashMap()
 
-    fun createGraph(graphCreator: GraphCreator): Graph = graphCreator.create()
+    fun getGraph(graphClass: KClass<out Graph>): Graph? = graphMap[graphClass]
+
+    fun storeGraph(graph: Graph) {
+        graphMap[graph::class] = graph
+    }
 }
