@@ -12,7 +12,7 @@ class ModularDaggerApp : Application() {
     lateinit var sp: SharedPreferences
 
     private val appComponent by lazy(LazyThreadSafetyMode.NONE) {
-        AppComponentCreator(this).create()
+        AppComponentProvider(this).provideGraph()
     }
 
     override fun onCreate() {
@@ -23,4 +23,3 @@ class ModularDaggerApp : Application() {
         Log.d("TAG", ">>> SP injected: ${sp.hashCode()}")
     }
 }
-

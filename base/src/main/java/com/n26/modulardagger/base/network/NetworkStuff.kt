@@ -1,12 +1,13 @@
 package com.n26.modulardagger.base.network
 
 import com.n26.modulardagger.graph.Graph
-import com.n26.modulardagger.graph.GraphCreator
 import com.n26.modulardagger.graph.GraphProvider
+import com.n26.modulardagger.graph.ScopePolicy
 import dagger.Component
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
+import kotlin.reflect.KClass
 
 class Retrofit
 
@@ -20,7 +21,7 @@ internal class NetworkModule {
 
 @Singleton
 @Component(modules = [NetworkModule::class])
-internal interface NetworkComponent : Graph {
+interface NetworkComponent : Graph {
 
     fun retrofit(): Retrofit
 
@@ -31,18 +32,11 @@ internal interface NetworkComponent : Graph {
     }
 }
 
-internal class NetworkComponentCreator : GraphCreator {
+internal class NetworkComponentProvider : GraphProvider<NetworkComponent>() {
 
-    override fun create(): NetworkComponent {
-        val component = GraphProvider.getGraph(NetworkComponent::class)
-            ?: createInternal()
+    override fun scopePolicy(): ScopePolicy = ScopePolicy.APP
 
-        return component as NetworkComponent
-    }
+    override fun createGraph(): NetworkComponent = DaggerNetworkComponent.create()
 
-    private fun createInternal(): NetworkComponent {
-        val component = DaggerNetworkComponent.create()
-        GraphProvider.storeGraph(component)
-        return component
-    }
+    override fun graphClass(): KClass<NetworkComponent> = NetworkComponent::class
 }

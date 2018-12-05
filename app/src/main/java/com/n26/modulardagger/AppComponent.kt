@@ -2,18 +2,19 @@ package com.n26.modulardagger
 
 import android.app.Application
 import com.n26.modulardagger.base.BaseComponent
-import com.n26.modulardagger.base.BaseComponentCreator
+import com.n26.modulardagger.base.BaseComponentProvider
 import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
-import com.n26.modulardagger.graph.GraphCreator
 import com.n26.modulardagger.graph.GraphProvider
+import com.n26.modulardagger.graph.ScopePolicy
 import dagger.Component
+import kotlin.reflect.KClass
 
 @AppScope
 @Component(dependencies = [BaseComponent::class])
-internal abstract class AppComponent : Graph {
+internal interface AppComponent : Graph {
 
-    abstract fun inject(app: ModularDaggerApp)
+    fun inject(app: ModularDaggerApp)
 
     @Component.Builder
     interface Builder : Graph.Builder {
@@ -24,21 +25,15 @@ internal abstract class AppComponent : Graph {
     }
 }
 
-internal class AppComponentCreator(private val app: Application) : GraphCreator {
+internal class AppComponentProvider(private val app: Application) : GraphProvider<AppComponent>() {
 
-    override fun create(): AppComponent {
-        val component = GraphProvider.getGraph(AppComponent::class)
-            ?: createInternal()
+    override fun scopePolicy(): ScopePolicy = ScopePolicy.NO_POLICY
 
-        return component as AppComponent
-    }
-
-    private fun createInternal(): AppComponent {
-        val component = DaggerAppComponent
+    override fun createGraph(): AppComponent =
+        DaggerAppComponent
             .builder()
-            .baseComponent(BaseComponentCreator(app).create())
+            .baseComponent(BaseComponentProvider(app).provideGraph())
             .build()
-        GraphProvider.storeGraph(component)
-        return component
-    }
+
+    override fun graphClass(): KClass<AppComponent> = AppComponent::class
 }

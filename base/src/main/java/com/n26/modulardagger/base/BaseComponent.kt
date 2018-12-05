@@ -4,22 +4,23 @@ import android.app.Application
 import android.content.SharedPreferences
 import com.n26.modulardagger.base.injection.modules.AppModule
 import com.n26.modulardagger.base.network.NetworkComponent
-import com.n26.modulardagger.base.network.NetworkComponentCreator
+import com.n26.modulardagger.base.network.NetworkComponentProvider
 import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
-import com.n26.modulardagger.graph.GraphCreator
 import com.n26.modulardagger.graph.GraphProvider
+import com.n26.modulardagger.graph.ScopePolicy
 import dagger.BindsInstance
 import dagger.Component
+import kotlin.reflect.KClass
 
 @AppScope
 @Component(modules = [AppModule::class], dependencies = [NetworkComponent::class])
-abstract class BaseComponent : Graph {
+interface BaseComponent : Graph {
 
-    abstract fun providesSharedPrefs(): SharedPreferences
+    fun providesSharedPrefs(): SharedPreferences
 
     @Component.Builder
-    internal interface Builder : Graph.Builder {
+    interface Builder : Graph.Builder {
 
         @BindsInstance
         fun bind(app: Application): Builder
@@ -30,21 +31,15 @@ abstract class BaseComponent : Graph {
     }
 }
 
-class BaseComponentCreator(private val app: Application) : GraphCreator {
+class BaseComponentProvider(private val app: Application) : GraphProvider<BaseComponent>() {
 
-    override fun create(): BaseComponent {
-        val component = GraphProvider.getGraph(BaseComponent::class)
-            ?: createInternal()
+    override fun scopePolicy(): ScopePolicy = ScopePolicy.APP
 
-        return component as BaseComponent
-    }
-
-    private fun createInternal(): BaseComponent {
-        val component = DaggerBaseComponent.builder()
+    override fun createGraph(): BaseComponent =
+        DaggerBaseComponent.builder()
             .bind(app)
-            .networkComponent(NetworkComponentCreator().create())
+            .networkComponent(NetworkComponentProvider().provideGraph())
             .build()
-        GraphProvider.storeGraph(component)
-        return component
-    }
+
+    override fun graphClass(): KClass<BaseComponent> = BaseComponent::class
 }

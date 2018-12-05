@@ -1,15 +1,27 @@
 package com.n26.modulardagger.graph
 
-import java.util.*
 import kotlin.reflect.KClass
 
-object GraphProvider {
+abstract class GraphProvider<T : Graph> {
 
-    private val graphMap: HashMap<KClass<out Graph>, Graph> = HashMap()
+    fun provideGraph(): T {
+        val component = GraphStore.getGraph(graphClass())
+            ?: createGraph()
 
-    fun getGraph(graphClass: KClass<out Graph>): Graph? = graphMap[graphClass]
+        when (scopePolicy()) {
+            ScopePolicy.APP -> GraphStore.storeGraph(component)
+        }
 
-    fun storeGraph(graph: Graph) {
-        graphMap[graph::class] = graph
+        return component as T
     }
+
+    protected abstract fun scopePolicy(): ScopePolicy
+
+    protected abstract fun createGraph(): T
+
+    protected abstract fun graphClass(): KClass<T>
+}
+
+enum class ScopePolicy {
+    APP, USER_SESSION, NO_POLICY
 }
