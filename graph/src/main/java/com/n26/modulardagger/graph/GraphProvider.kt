@@ -5,19 +5,21 @@ import kotlin.reflect.KClass
 abstract class GraphProvider<T : Graph> {
 
     fun provideGraph(): T {
-        val component = GraphStore.getGraph(graphClass())
-            ?: createGraph()
+        val component = getFromStoreOrCreateGraph()
 
         when (scopePolicy()) {
             ScopePolicy.APP -> GraphStore.storeGraph(component)
         }
 
-        return component as T
+        return component
     }
+
+    private fun getFromStoreOrCreateGraph(): T =
+        (GraphStore.getGraph(graphClass()) ?: createGraph()) as T
 
     protected abstract fun scopePolicy(): ScopePolicy
 
-    protected abstract fun createGraph(): T
+    protected abstract fun createGraph(): Graph
 
     protected abstract fun graphClass(): KClass<T>
 }

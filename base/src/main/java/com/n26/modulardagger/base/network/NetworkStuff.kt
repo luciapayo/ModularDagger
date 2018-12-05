@@ -32,11 +32,11 @@ interface NetworkComponent : Graph {
     }
 }
 
-internal class NetworkComponentProvider : GraphProvider<NetworkComponent>() {
+internal class DaggerNetworkComponentProvider : GraphProvider<DaggerNetworkComponent>() {
 
     override fun scopePolicy(): ScopePolicy = ScopePolicy.APP
 
     override fun createGraph(): NetworkComponent = DaggerNetworkComponent.create()
 
-    override fun graphClass(): KClass<NetworkComponent> = NetworkComponent::class
+    override fun graphClass(): KClass<DaggerNetworkComponent> = DaggerNetworkComponent::class
 }

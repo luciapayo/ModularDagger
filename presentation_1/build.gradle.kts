@@ -13,6 +13,7 @@ dependencies {
     implementation(project(":base"))
     api(project(":architecture_presentation"))
     implementation(project(":domain_data_1"))
+    implementation(project(":graph"))
 
     // Dagger2
     kapt(Dependencies.dagger2_compiler)

@@ -3,8 +3,8 @@ package com.n26.modulardagger.base
 import android.app.Application
 import android.content.SharedPreferences
 import com.n26.modulardagger.base.injection.modules.AppModule
+import com.n26.modulardagger.base.network.DaggerNetworkComponentProvider
 import com.n26.modulardagger.base.network.NetworkComponent
-import com.n26.modulardagger.base.network.NetworkComponentProvider
 import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphProvider
@@ -31,15 +31,18 @@ interface BaseComponent : Graph {
     }
 }
 
-class BaseComponentProvider(private val app: Application) : GraphProvider<BaseComponent>() {
+class DaggerBaseComponentProvider(private val app: Application? = null) : GraphProvider<DaggerBaseComponent>() {
 
     override fun scopePolicy(): ScopePolicy = ScopePolicy.APP
 
     override fun createGraph(): BaseComponent =
         DaggerBaseComponent.builder()
-            .bind(app)
-            .networkComponent(NetworkComponentProvider().provideGraph())
+            .bind(app.isNotNull())
+            .networkComponent(DaggerNetworkComponentProvider().provideGraph())
             .build()
 
-    override fun graphClass(): KClass<BaseComponent> = BaseComponent::class
+    override fun graphClass(): KClass<DaggerBaseComponent> = DaggerBaseComponent::class
+
+    private fun Application?.isNotNull(): Application =
+        this ?: throw IllegalStateException("Trying to create BaseComponent but app instance has not been passed!")
 }
