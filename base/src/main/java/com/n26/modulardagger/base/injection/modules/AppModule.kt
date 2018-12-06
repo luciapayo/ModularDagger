@@ -3,7 +3,7 @@ package com.n26.modulardagger.base.injection.modules
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.n26.modulardagger.graph.ForApplication
+import com.n26.modulardagger.base.injection.ForApplication
 import dagger.Module
 import dagger.Provides
 

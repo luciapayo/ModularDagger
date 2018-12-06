@@ -3,9 +3,9 @@ package com.n26.modulardagger.base
 import android.app.Application
 import android.content.SharedPreferences
 import com.n26.modulardagger.base.injection.modules.AppModule
+import com.n26.modulardagger.base.injection.modules.AppScope
 import com.n26.modulardagger.base.network.NetworkModule
 import com.n26.modulardagger.base.network.Retrofit
-import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphProvider
 import com.n26.modulardagger.graph.RetentionPolicy

@@ -2,9 +2,9 @@ package com.n26.modulardagger.presentation_1
 
 import com.n26.modulardagger.base.BaseComponent
 import com.n26.modulardagger.base.DaggerBaseComponentProvider
+import com.n26.modulardagger.base.injection.modules.ActivityScope
 import com.n26.modulardagger.domain_data_1.DaggerDataDomain1ComponentProvider
 import com.n26.modulardagger.domain_data_1.DataDomain1Component
-import com.n26.modulardagger.graph.ActivityScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphProvider
 import com.n26.modulardagger.graph.RetentionPolicy

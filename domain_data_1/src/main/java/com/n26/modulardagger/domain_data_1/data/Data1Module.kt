@@ -1,7 +1,7 @@
 package com.n26.modulardagger.domain_data_1.data
 
+import com.n26.modulardagger.base.injection.modules.AppScope
 import com.n26.modulardagger.base.network.Retrofit
-import com.n26.modulardagger.graph.AppScope
 import dagger.Module
 import dagger.Provides
 

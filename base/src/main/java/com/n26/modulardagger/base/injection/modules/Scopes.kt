@@ -1,4 +1,4 @@
-package com.n26.modulardagger.graph
+package com.n26.modulardagger.base.injection.modules
 
 import javax.inject.Scope
 
