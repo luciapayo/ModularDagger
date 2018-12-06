@@ -23,6 +23,6 @@ class Presentation1Activity : BaseInjectingActivity() {
     }
 
     private fun onInject() {
-        DaggerPresentation1ActivityComponentProvider().provideGraph().inject(this)
+        DaggerPresentation1ActivityComponentProvider(this).provideGraph().inject(this)
     }
 }

@@ -1,6 +1,6 @@
 package com.n26.modulardagger.base.network
 
-import com.n26.modulardagger.base.injection.modules.AppScope
+import com.n26.modulardagger.base.injection.AppScope
 import dagger.Module
 import dagger.Provides
 

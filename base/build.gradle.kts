@@ -12,6 +12,9 @@ android {
 dependencies {
     implementation(project(":graph"))
 
+    // Base presentation stuff
+    api(project(":architecture_presentation"))
+
     // Kotlin
     api(Dependencies.kotlin_stdlib_jdk7)
     api(Dependencies.ktx_core)

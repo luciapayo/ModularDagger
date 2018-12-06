@@ -1,6 +1,6 @@
 package com.n26.modulardagger.domain_data_1.data
 
-import com.n26.modulardagger.base.injection.modules.AppScope
+import com.n26.modulardagger.base.injection.AppScope
 import com.n26.modulardagger.base.network.Retrofit
 import dagger.Module
 import dagger.Provides

@@ -11,7 +11,6 @@ android {
 
 dependencies {
     implementation(project(":base"))
-    api(project(":architecture_presentation"))
     implementation(project(":graph"))
 
     // Dagger2

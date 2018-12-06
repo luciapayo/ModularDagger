@@ -8,6 +8,5 @@ class HomeActivity : BaseInjectingActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        //val entity = retrieveDomainEntity1.retrieveDomainEntity1()
     }
 }

@@ -2,8 +2,8 @@ package com.n26.modulardagger.base
 
 import android.app.Application
 import android.content.SharedPreferences
+import com.n26.modulardagger.base.injection.AppScope
 import com.n26.modulardagger.base.injection.modules.AppModule
-import com.n26.modulardagger.base.injection.modules.AppScope
 import com.n26.modulardagger.base.network.NetworkModule
 import com.n26.modulardagger.base.network.Retrofit
 import com.n26.modulardagger.graph.Graph
@@ -42,6 +42,5 @@ class DaggerBaseComponentProvider(private val app: Application? = null) : GraphP
 
     override fun graphClass(): KClass<DaggerBaseComponent> = DaggerBaseComponent::class
 
-    private fun Application?.isNotNull(): Application =
-        this ?: throw IllegalStateException("Trying to create BaseComponent but app instance has not been passed!")
+
 }

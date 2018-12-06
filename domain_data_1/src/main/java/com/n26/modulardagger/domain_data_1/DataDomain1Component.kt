@@ -2,7 +2,7 @@ package com.n26.modulardagger.domain_data_1
 
 import com.n26.modulardagger.base.BaseComponent
 import com.n26.modulardagger.base.DaggerBaseComponentProvider
-import com.n26.modulardagger.base.injection.modules.AppScope
+import com.n26.modulardagger.base.injection.AppScope
 import com.n26.modulardagger.domain_data_1.data.Data1Module
 import com.n26.modulardagger.domain_data_1.data.Repository1
 import com.n26.modulardagger.graph.Graph
