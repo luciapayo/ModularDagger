@@ -2,11 +2,11 @@
           package="com.n26.modulardagger">
 
     <application
-            android:name=".ModularDaggerApp"
+            android:name=".app.ModularDaggerApp"
             android:allowBackup="true"
-                 android:label="@string/app_name"
-                 android:icon="@mipmap/ic_launcher"
-                 android:roundIcon="@mipmap/ic_launcher_round"
-                 android:supportsRtl="true"
-                 android:theme="@style/AppTheme"/>
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"/>
 </manifest>

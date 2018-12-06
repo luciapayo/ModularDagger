@@ -1,6 +1,7 @@
-package com.n26.modulardagger
+package com.n26.modulardagger.app
 
 import android.app.Application
+import com.n26.modulardagger.DaggerAppComponent
 import com.n26.modulardagger.base.BaseComponent
 import com.n26.modulardagger.base.DaggerBaseComponentProvider
 import com.n26.modulardagger.base.injection.AppScope
@@ -30,8 +31,7 @@ class DaggerAppComponentProvider(private val app: Application) : GraphProvider<D
     override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.NO_POLICY
 
     override fun createGraph(): AppComponent =
-        DaggerAppComponent
-            .builder()
+        DaggerAppComponent.builder()
             .baseComponent(DaggerBaseComponentProvider(app).provideGraph())
             .build()
 

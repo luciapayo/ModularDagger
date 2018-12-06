@@ -1,4 +1,4 @@
-package com.n26.modulardagger
+package com.n26.modulardagger.app
 
 import android.app.Application
 import android.content.SharedPreferences
