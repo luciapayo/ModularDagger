@@ -8,13 +8,12 @@
               android:layout_height="match_parent"
               style="@style/TextAppearance.AppCompat.Headline"
               android:gravity="center"
-              android:text="I AM THE ACTIVITY FROM LOGIN"/>
+              android:text="I AM THE ACTIVITY FROM HOME"/>
 
     <Button
-            android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
+            android:text="LOGOUT"
             android:layout_margin="8dp"
             android:backgroundTint="@color/adl_full_teal"
             android:layout_gravity="bottom"
