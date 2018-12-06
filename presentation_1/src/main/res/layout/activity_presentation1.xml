@@ -10,4 +10,14 @@
               android:gravity="center"
               android:text="I AM THE ACTIVITY FROM PRESENTATION1"/>
 
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/adl_full_teal"
+            android:layout_gravity="bottom"
+            style="@style/Base.TextAppearance.AppCompat.Button"
+            android:textColor="@android:color/white"/>
+
 </FrameLayout>

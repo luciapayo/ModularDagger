@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme -->
+    <color name="colorPrimary">@color/adl_full_teal</color>
+    <color name="colorPrimaryDark">@color/adl_dark_teal</color>
+
+    <!-- Teal -->
+    <color name="adl_bright_teal">#CEEDE6</color>
+    <color name="adl_full_teal">#48AC98</color>
+    <color name="adl_dark_teal">#4A8073</color>
+</resources>
