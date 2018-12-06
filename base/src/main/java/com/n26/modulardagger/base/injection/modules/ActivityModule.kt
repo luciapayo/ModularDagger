@@ -16,9 +16,6 @@ class ActivityModule {
     fun provideContext(activity: AppCompatActivity): Context = activity
 
     @Provides
-    fun provideActivity(activity: AppCompatActivity): AppCompatActivity = activity
-
-    @Provides
     fun provideLifecycle(activity: AppCompatActivity): Lifecycle = activity.lifecycle
 
     @Provides

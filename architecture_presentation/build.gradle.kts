@@ -10,6 +10,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":graph"))
+
     // AndroidX
     api(Dependencies.app_compat)
 }
