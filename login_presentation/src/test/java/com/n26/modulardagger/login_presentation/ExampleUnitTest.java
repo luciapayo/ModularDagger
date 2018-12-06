@@ -1,4 +1,4 @@
-package com.n26.modulardagger.presentation_1;
+package com.n26.modulardagger.login_presentation;
 
 import org.junit.Test;
 

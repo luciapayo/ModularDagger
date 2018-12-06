@@ -28,9 +28,8 @@ android {
 }
 
 dependencies {
-
     implementation(project(":base"))
-    implementation(project(":presentation_1"))
+    implementation(project(":login_presentation"))
     implementation(project(":domain_data_1"))
     implementation(project(":graph"))
 

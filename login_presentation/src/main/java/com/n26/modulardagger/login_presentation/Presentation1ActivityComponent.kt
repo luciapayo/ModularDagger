@@ -1,4 +1,4 @@
-package com.n26.modulardagger.presentation_1
+package com.n26.modulardagger.login_presentation
 
 import com.n26.modulardagger.base.BaseComponent
 import com.n26.modulardagger.base.DaggerBaseComponentProvider

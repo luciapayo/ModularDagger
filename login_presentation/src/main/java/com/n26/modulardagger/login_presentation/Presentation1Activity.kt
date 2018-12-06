@@ -1,4 +1,4 @@
-package com.n26.modulardagger.presentation_1
+package com.n26.modulardagger.login_presentation
 
 import android.os.Bundle
 import com.n26.modulardagger.architecture_presentation.actiivty.BaseInjectingActivity

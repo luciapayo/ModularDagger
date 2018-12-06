@@ -1,4 +1,4 @@
-package com.n26.modulardagger.presentation_1;
+package com.n26.modulardagger.login_presentation;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
