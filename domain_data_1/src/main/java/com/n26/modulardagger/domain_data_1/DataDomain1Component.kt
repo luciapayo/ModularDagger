@@ -7,7 +7,7 @@ import com.n26.modulardagger.domain_data_1.data.Repository1
 import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphProvider
-import com.n26.modulardagger.graph.ScopePolicy
+import com.n26.modulardagger.graph.RetentionPolicy
 import dagger.Component
 import kotlin.reflect.KClass
 
@@ -28,7 +28,7 @@ interface DataDomain1Component : Graph {
 
 class DaggerDataDomain1ComponentProvider : GraphProvider<DaggerDataDomain1Component>() {
 
-    override fun scopePolicy(): ScopePolicy = ScopePolicy.APP
+    override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.APP
 
     override fun createGraph(): DataDomain1Component =
         DaggerDataDomain1Component.builder()

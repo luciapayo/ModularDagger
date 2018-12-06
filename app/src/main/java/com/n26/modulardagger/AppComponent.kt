@@ -6,7 +6,7 @@ import com.n26.modulardagger.base.DaggerBaseComponentProvider
 import com.n26.modulardagger.graph.AppScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphProvider
-import com.n26.modulardagger.graph.ScopePolicy
+import com.n26.modulardagger.graph.RetentionPolicy
 import dagger.Component
 import kotlin.reflect.KClass
 
@@ -27,7 +27,7 @@ interface AppComponent : Graph {
 
 class DaggerAppComponentProvider(private val app: Application) : GraphProvider<DaggerAppComponent>() {
 
-    override fun scopePolicy(): ScopePolicy = ScopePolicy.NO_POLICY
+    override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.NO_POLICY
 
     override fun createGraph(): AppComponent =
         DaggerAppComponent

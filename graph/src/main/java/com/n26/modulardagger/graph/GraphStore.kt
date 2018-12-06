@@ -3,7 +3,8 @@ package com.n26.modulardagger.graph
 import java.util.*
 import kotlin.reflect.KClass
 
-object GraphStore {
+// TODO: Assert Main Thread in all methods.
+internal class GraphStore {
 
     private val graphMap: HashMap<KClass<out Graph>, Graph> = HashMap()
 
@@ -12,4 +13,6 @@ object GraphStore {
     fun storeGraph(graph: Graph) {
         graphMap[graph::class] = graph
     }
+
+    fun clear() = graphMap.clear()
 }
