@@ -10,9 +10,8 @@ android {
 }
 
 dependencies {
+    // Base dependencies
     implementation(project(":graph"))
-
-    // Base presentation stuff
     api(project(":architecture_presentation"))
 
     // Kotlin

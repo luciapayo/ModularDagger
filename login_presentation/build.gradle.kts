@@ -10,10 +10,12 @@ android {
 }
 
 dependencies {
+    // Base Dependencies
     implementation(project(":base"))
-    api(project(":architecture_presentation"))
-    implementation(project(":domain_data_1"))
     implementation(project(":graph"))
+
+    // Feature dependencies
+    implementation(project(":domain_data_1"))
     api(project(":home_presentation"))
 
     // Dagger2

@@ -1,7 +1,6 @@
 package com.n26.modulardagger.app
 
 import android.app.Application
-import com.n26.modulardagger.DaggerAppComponent
 import com.n26.modulardagger.base.BaseComponent
 import com.n26.modulardagger.base.DaggerBaseComponentProvider
 import com.n26.modulardagger.base.injection.AppScope

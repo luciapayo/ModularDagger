@@ -28,10 +28,11 @@ android {
 }
 
 dependencies {
+    // Base dependencies
     implementation(project(":base"))
-    implementation(project(":login_presentation"))
-    implementation(project(":domain_data_1"))
     implementation(project(":graph"))
+
+    implementation(project(":login_presentation"))
 
     // AndroidX
     implementation(Dependencies.app_compat)

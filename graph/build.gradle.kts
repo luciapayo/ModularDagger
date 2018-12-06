@@ -10,7 +10,6 @@ android {
 }
 
 dependencies {
-
     api(Dependencies.kotlin_stdlib_jdk7)
 
     // Dagger2

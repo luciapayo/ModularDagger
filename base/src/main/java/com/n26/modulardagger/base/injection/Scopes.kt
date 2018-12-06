@@ -11,6 +11,10 @@ annotation class AppScope
 
 @Scope
 @Retention(AnnotationRetention.SOURCE)
+annotation class UserSessionScope
+
+@Scope
+@Retention(AnnotationRetention.SOURCE)
 annotation class ActivityScope
 
 @Scope
