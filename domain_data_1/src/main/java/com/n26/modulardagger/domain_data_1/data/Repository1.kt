@@ -5,7 +5,7 @@ import com.n26.modulardagger.domain_data_1.domain.DomainEntity1
 
 class Repository1(private val retrofit: Retrofit) {
 
-    val data by lazy(LazyThreadSafetyMode.NONE) {
+    val data by lazy {
         DomainEntity1("This is DomainEntity1")
     }
 }
