@@ -14,6 +14,9 @@ dependencies {
     implementation(project(":base"))
     implementation(project(":graph"))
 
+    // User Session
+    implementation(project(":user_session"))
+
     // Dagger2
     kapt(Dependencies.dagger2_compiler)
 }

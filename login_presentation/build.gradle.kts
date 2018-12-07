@@ -18,6 +18,9 @@ dependencies {
     implementation(project(":domain_data_1"))
     api(project(":home_presentation"))
 
+    // User Session
+    implementation(project(":user_session"))
+
     // Dagger2
     kapt(Dependencies.dagger2_compiler)
 }

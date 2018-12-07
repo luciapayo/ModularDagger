@@ -32,6 +32,9 @@ dependencies {
     implementation(project(":base"))
     implementation(project(":graph"))
 
+    implementation(project(":user_session"))
+
+    // This could be removed (Maybe?)
     implementation(project(":login_presentation"))
 
     // AndroidX

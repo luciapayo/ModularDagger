@@ -15,5 +15,5 @@ dependencies {
     implementation(project(":graph"))
 
     // Dagger2
-    api(Dependencies.dagger2)
+    kapt(Dependencies.dagger2_compiler)
 }

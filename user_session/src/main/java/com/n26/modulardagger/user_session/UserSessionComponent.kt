@@ -8,8 +8,8 @@ import dagger.Component
 import kotlin.reflect.KClass
 
 @UserSessionScope
-@Component()
-interface UserSessionComponent : Graph {
+@Component
+internal interface UserSessionComponent : Graph {
 
     fun inject(userSession: UserSession)
 
@@ -20,7 +20,7 @@ interface UserSessionComponent : Graph {
     }
 }
 
-class DaggerUserSessionComponentProvider : GraphProvider<DaggerUserSessionComponent>() {
+internal class DaggerUserSessionComponentProvider : GraphProvider<DaggerUserSessionComponent>() {
 
     override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.USER_SESSION
 
