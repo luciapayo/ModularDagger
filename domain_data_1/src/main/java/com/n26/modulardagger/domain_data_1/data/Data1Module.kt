@@ -6,7 +6,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class Data1Module {
+internal class Data1Module {
 
     @AppScope
     @Provides
