@@ -20,11 +20,11 @@ internal interface UserSessionComponent : Graph {
     }
 }
 
-internal class DaggerUserSessionComponentProvider : GraphProvider<DaggerUserSessionComponent>() {
+internal class UserSessionComponentProvider : GraphProvider<DaggerUserSessionComponent>() {
 
     override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.USER_SESSION
 
-    override fun createGraph(): UserSessionComponent =
+    override fun createGraph(): Graph =
         DaggerUserSessionComponent.builder()
             .build()
 

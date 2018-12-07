@@ -23,7 +23,7 @@ class HomeActivity : BaseInjectingActivity<HomeActivityComponent>() {
     }
 
     override fun createGraph(): HomeActivityComponent =
-        DaggerHomeActivityComponentProvider(this).provideGraph()
+        HomeActivityComponentProvider(this).provideGraph()
 
     override fun onInject(graph: HomeActivityComponent) = graph.inject(this)
 }

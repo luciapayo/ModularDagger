@@ -9,7 +9,7 @@ internal class UserSession {
     lateinit var viewModel: UserSessionViewModel
 
     fun onCreate() {
-        DaggerUserSessionComponentProvider().provideGraph().inject(this)
+        UserSessionComponentProvider().provideGraph().inject(this)
         Log.d("UserSession", "ViewModel: ${viewModel.hashCode()}")
         // Do common things for the session.
     }

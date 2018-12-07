@@ -2,7 +2,7 @@ package com.n26.modulardagger.app
 
 import android.app.Application
 import com.n26.modulardagger.base.BaseComponent
-import com.n26.modulardagger.base.DaggerBaseComponentProvider
+import com.n26.modulardagger.base.BaseComponentProvider
 import com.n26.modulardagger.base.injection.AppScope
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphProvider
@@ -25,13 +25,13 @@ interface AppComponent : Graph {
     }
 }
 
-class DaggerAppComponentProvider(private val app: Application) : GraphProvider<DaggerAppComponent>() {
+class AppComponentProvider(private val app: Application) : GraphProvider<DaggerAppComponent>() {
 
     override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.NO_POLICY
 
-    override fun createGraph(): AppComponent =
+    override fun createGraph(): Graph =
         DaggerAppComponent.builder()
-            .baseComponent(DaggerBaseComponentProvider(app).provideGraph())
+            .baseComponent(BaseComponentProvider(app).provideGraph())
             .build()
 
     override fun graphClass(): KClass<DaggerAppComponent> = DaggerAppComponent::class

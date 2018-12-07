@@ -31,16 +31,14 @@ interface BaseComponent : Graph {
     }
 }
 
-class DaggerBaseComponentProvider(private val app: Application? = null) : GraphProvider<DaggerBaseComponent>() {
+class BaseComponentProvider(private val app: Application? = null) : GraphProvider<DaggerBaseComponent>() {
 
     override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.APP
 
-    override fun createGraph(): BaseComponent =
+    override fun createGraph(): Graph =
         DaggerBaseComponent.builder()
             .bind(app.isNotNull())
             .build()
 
     override fun graphClass(): KClass<DaggerBaseComponent> = DaggerBaseComponent::class
-
-
 }

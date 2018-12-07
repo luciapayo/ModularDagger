@@ -27,7 +27,7 @@ interface HomeActivityComponent : Graph {
     }
 }
 
-class DaggerHomeActivityComponentProvider(private val activity: AppCompatActivity? = null) :
+class HomeActivityComponentProvider(private val activity: AppCompatActivity? = null) :
     GraphProvider<DaggerHomeActivityComponent>() {
 
     override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.NO_POLICY

@@ -1,7 +1,7 @@
 package com.n26.modulardagger.domain_data_1
 
 import com.n26.modulardagger.base.BaseComponent
-import com.n26.modulardagger.base.DaggerBaseComponentProvider
+import com.n26.modulardagger.base.BaseComponentProvider
 import com.n26.modulardagger.base.injection.AppScope
 import com.n26.modulardagger.domain_data_1.data.Data1Module
 import com.n26.modulardagger.domain_data_1.data.Repository1
@@ -26,13 +26,13 @@ interface DataDomain1Component : Graph {
     }
 }
 
-class DaggerDataDomain1ComponentProvider : GraphProvider<DaggerDataDomain1Component>() {
+class DataDomain1ComponentProvider : GraphProvider<DaggerDataDomain1Component>() {
 
     override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.APP
 
-    override fun createGraph(): DataDomain1Component =
+    override fun createGraph(): Graph =
         DaggerDataDomain1Component.builder()
-            .baseComponent(DaggerBaseComponentProvider().provideGraph())
+            .baseComponent(BaseComponentProvider().provideGraph())
             .build()
 
     override fun graphClass(): KClass<DaggerDataDomain1Component> = DaggerDataDomain1Component::class

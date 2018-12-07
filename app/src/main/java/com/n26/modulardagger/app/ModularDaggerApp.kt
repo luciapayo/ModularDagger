@@ -11,7 +11,7 @@ class ModularDaggerApp : Application() {
     lateinit var sp: SharedPreferences
 
     override fun onCreate() {
-        DaggerAppComponentProvider(this).provideGraph().inject(this)
+        AppComponentProvider(this).provideGraph().inject(this)
         super.onCreate()
         Log.d("TAG", ">>> SP injected: ${sp.hashCode()}")
     }

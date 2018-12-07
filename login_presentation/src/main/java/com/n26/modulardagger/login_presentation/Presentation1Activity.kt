@@ -32,5 +32,5 @@ class Presentation1Activity : BaseInjectingActivity<Presentation1ActivityCompone
     override fun onInject(graph: Presentation1ActivityComponent) = graph.inject(this)
 
     override fun createGraph(): Presentation1ActivityComponent =
-        DaggerPresentation1ActivityComponentProvider(this).provideGraph()
+        Presentation1ActivityComponentProvider(this).provideGraph()
 }
