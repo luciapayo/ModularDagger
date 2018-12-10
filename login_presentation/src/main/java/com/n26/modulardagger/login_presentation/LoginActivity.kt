@@ -9,7 +9,7 @@ import com.n26.modulardagger.user_session.domain.SendLogIn
 import kotlinx.android.synthetic.main.activity_presentation1.*
 import javax.inject.Inject
 
-class Presentation1Activity : BaseInjectingActivity<Presentation1ActivityComponent>() {
+class LoginActivity : BaseInjectingActivity<LoginActivityComponent>() {
 
     @Inject
     lateinit var retrieveDomainEntity1: RetrieveDomainEntity1
@@ -20,7 +20,10 @@ class Presentation1Activity : BaseInjectingActivity<Presentation1ActivityCompone
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_presentation1)
-        tv.setText("This is Presentation1 with repo: ${retrieveDomainEntity1.retrieveDomainEntity1()}")
+        tv.setText(
+            "This is Login with:\n" +
+                    "${retrieveDomainEntity1.retrieveDomainEntity1()}"
+        )
         buttonLogin.setOnClickListener { logIn() }
     }
 
@@ -29,8 +32,8 @@ class Presentation1Activity : BaseInjectingActivity<Presentation1ActivityCompone
         startActivity(Intent(this, HomeActivity::class.java))
     }
 
-    override fun onInject(graph: Presentation1ActivityComponent) = graph.inject(this)
+    override fun onInject(graph: LoginActivityComponent) = graph.inject(this)
 
-    override fun createGraph(): Presentation1ActivityComponent =
+    override fun createGraph(): LoginActivityComponent =
         Presentation1ActivityComponentProvider(this).provideGraph()
 }

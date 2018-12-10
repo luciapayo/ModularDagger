@@ -10,11 +10,11 @@ internal class UserSession {
 
     fun onCreate() {
         UserSessionComponentProvider().provideGraph().inject(this)
-        Log.d("UserSession", "ViewModel: ${viewModel.hashCode()}")
+        Log.d("UserSession", ">>>> onCreate: ${this.hashCode()}")
         // Do common things for the session.
     }
 
     fun onDestroy() {
-
+        Log.d("UserSession", ">>>> onDestroy: ${this.hashCode()}")
     }
 }

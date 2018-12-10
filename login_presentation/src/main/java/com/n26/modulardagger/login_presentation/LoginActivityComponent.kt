@@ -1,8 +1,6 @@
 package com.n26.modulardagger.login_presentation
 
 import androidx.appcompat.app.AppCompatActivity
-import com.n26.modulardagger.base.BaseComponent
-import com.n26.modulardagger.base.BaseComponentProvider
 import com.n26.modulardagger.base.injection.ActivityScope
 import com.n26.modulardagger.base.injection.modules.ActivityModule
 import com.n26.modulardagger.base.isNotNull
@@ -16,10 +14,10 @@ import dagger.Component
 import kotlin.reflect.KClass
 
 @ActivityScope
-@Component(dependencies = [DataDomain1Component::class, BaseComponent::class], modules = [ActivityModule::class])
-interface Presentation1ActivityComponent : Graph {
+@Component(dependencies = [DataDomain1Component::class], modules = [ActivityModule::class])
+interface LoginActivityComponent : Graph {
 
-    fun inject(activity: Presentation1Activity)
+    fun inject(activity: LoginActivity)
 
     @Component.Builder
     interface Builder : Graph.Builder {
@@ -29,24 +27,21 @@ interface Presentation1ActivityComponent : Graph {
 
         fun dataDomain1Component(component: DataDomain1Component): Builder
 
-        fun baseComponent(component: BaseComponent): Builder
-
-        override fun build(): Presentation1ActivityComponent
+        override fun build(): LoginActivityComponent
     }
 }
 
 class Presentation1ActivityComponentProvider(private val activity: AppCompatActivity? = null) :
-    GraphProvider<DaggerPresentation1ActivityComponent>() {
+    GraphProvider<DaggerLoginActivityComponent>() {
 
     override fun retentionPolicy(): RetentionPolicy = RetentionPolicy.NO_POLICY
 
     override fun createGraph(): Graph =
-        DaggerPresentation1ActivityComponent.builder()
+        DaggerLoginActivityComponent.builder()
             .bind(activity.isNotNull())
             .dataDomain1Component(DataDomain1ComponentProvider().provideGraph())
-            .baseComponent(BaseComponentProvider().provideGraph())
             .build()
 
-    override fun graphClass(): KClass<DaggerPresentation1ActivityComponent> =
-        DaggerPresentation1ActivityComponent::class
+    override fun graphClass(): KClass<DaggerLoginActivityComponent> =
+        DaggerLoginActivityComponent::class
 }
