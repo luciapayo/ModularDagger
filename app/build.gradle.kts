@@ -27,8 +27,6 @@ dependencies {
     implementation(project(":base"))
     implementation(project(":graph"))
 
-    implementation(project(":user_session"))
-
     // This can be removed with proper solution for navigation
     implementation(project(":login_presentation"))
 
