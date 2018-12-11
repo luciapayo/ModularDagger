@@ -3,7 +3,7 @@ package com.n26.modulardagger.login_presentation
 import android.content.Intent
 import android.os.Bundle
 import com.n26.modulardagger.architecture_presentation.actiivty.BaseInjectingActivity
-import com.n26.modulardagger.domain_data_1.domain.RetrieveDomainEntity1
+import com.n26.modulardagger.domain_3.domain.RetrieveDomainEntity3
 import com.n26.modulardagger.home.HomeActivity
 import com.n26.modulardagger.user_session.domain.SendLogIn
 import kotlinx.android.synthetic.main.activity_presentation1.*
@@ -12,7 +12,7 @@ import javax.inject.Inject
 class LoginActivity : BaseInjectingActivity<LoginActivityComponent>() {
 
     @Inject
-    lateinit var retrieveDomainEntity1: RetrieveDomainEntity1
+    lateinit var retrieveDomainEntity3: RetrieveDomainEntity3
 
     @Inject
     lateinit var sendLogIn: SendLogIn
@@ -22,7 +22,7 @@ class LoginActivity : BaseInjectingActivity<LoginActivityComponent>() {
         setContentView(R.layout.activity_presentation1)
         tv.setText(
             "This is Login with:\n" +
-                    "${retrieveDomainEntity1.retrieveDomainEntity1()}"
+                    "${retrieveDomainEntity3.retrieveDomainEntity3()}"
         )
         buttonLogin.setOnClickListener { logIn() }
     }

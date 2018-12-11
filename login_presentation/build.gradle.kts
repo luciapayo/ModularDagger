@@ -15,11 +15,11 @@ dependencies {
     implementation(project(":graph"))
 
     // Feature dependencies
-    implementation(project(":domain_data_1"))
-    api(project(":home_presentation"))
-
-    // User Session
+    implementation(project(":domain_3"))
     implementation(project(":user_session"))
+
+    // This can be removed with proper solution for navigation
+    api(project(":home_presentation"))
 
     // Dagger2
     kapt(Dependencies.dagger2_compiler)

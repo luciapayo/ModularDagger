@@ -1,5 +1,6 @@
 package com.n26.modulardagger.domain_3
 
+import com.n26.modulardagger.domain_3.domain.RetrieveDomainEntity3
 import com.n26.modulardagger.domain_data_1.DataDomain1Component
 import com.n26.modulardagger.domain_data_1.DataDomain1ComponentProvider
 import com.n26.modulardagger.graph.Graph
@@ -12,6 +13,8 @@ import kotlin.reflect.KClass
 
 @Component(dependencies = [LegacyComponent::class, DataDomain1Component::class])
 interface Domain3Component : Graph {
+
+    fun retrieveDomainEntity3(): RetrieveDomainEntity3
 
     @Component.Builder
     interface Builder : Graph.Builder {

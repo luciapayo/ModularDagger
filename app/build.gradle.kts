@@ -29,7 +29,7 @@ dependencies {
 
     implementation(project(":user_session"))
 
-    // This could be removed (Maybe?)
+    // This can be removed with proper solution for navigation
     implementation(project(":login_presentation"))
 
     // AndroidX

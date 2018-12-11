@@ -10,5 +10,5 @@ class RetrieveDomainEntity3 @Inject internal constructor(
 ) {
 
     fun retrieveDomainEntity3() =
-        DomainEntity3(repository1.data.random + legacyManager.legacyState.random)
+        DomainEntity3(repository1.data.random, legacyManager.legacyState.random)
 }

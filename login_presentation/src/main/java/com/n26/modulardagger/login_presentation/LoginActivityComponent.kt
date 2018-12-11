@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.n26.modulardagger.base.injection.ActivityScope
 import com.n26.modulardagger.base.injection.modules.ActivityModule
 import com.n26.modulardagger.base.isNotNull
-import com.n26.modulardagger.domain_data_1.DataDomain1Component
-import com.n26.modulardagger.domain_data_1.DataDomain1ComponentProvider
+import com.n26.modulardagger.domain_3.Domain3Component
+import com.n26.modulardagger.domain_3.Domain3ComponentProvider
 import com.n26.modulardagger.graph.Graph
 import com.n26.modulardagger.graph.GraphProvider
 import com.n26.modulardagger.graph.RetentionPolicy
@@ -14,7 +14,7 @@ import dagger.Component
 import kotlin.reflect.KClass
 
 @ActivityScope
-@Component(dependencies = [DataDomain1Component::class], modules = [ActivityModule::class])
+@Component(dependencies = [Domain3Component::class], modules = [ActivityModule::class])
 interface LoginActivityComponent : Graph {
 
     fun inject(activity: LoginActivity)
@@ -25,7 +25,7 @@ interface LoginActivityComponent : Graph {
         @BindsInstance
         fun bind(activity: AppCompatActivity): Builder
 
-        fun dataDomain1Component(component: DataDomain1Component): Builder
+        fun domain3Component(component: Domain3Component): Builder
 
         override fun build(): LoginActivityComponent
     }
@@ -39,7 +39,7 @@ class Presentation1ActivityComponentProvider(private val activity: AppCompatActi
     override fun createGraph(): Graph =
         DaggerLoginActivityComponent.builder()
             .bind(activity.isNotNull())
-            .dataDomain1Component(DataDomain1ComponentProvider().provideGraph())
+            .domain3Component(Domain3ComponentProvider().provideGraph())
             .build()
 
     override fun graphClass(): KClass<DaggerLoginActivityComponent> =
