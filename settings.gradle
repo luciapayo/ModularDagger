@@ -1,1 +1,1 @@
-include ':app', ':base', ':login_presentation', ':architecture_presentation', ':domain_data_1', ':graph', ':home_presentation', ':user_session', ':domain_data_2', ':legacy'
+include ':app', ':base', ':login_presentation', ':architecture_presentation', ':domain_data_1', ':graph', ':home_presentation', ':user_session', ':domain_data_2', ':legacy', ':domain_3'
