@@ -13,6 +13,8 @@ import kotlin.reflect.KClass
 @Component(modules = [LegacyModule::class], dependencies = [BaseComponent::class])
 interface LegacyComponent : Graph {
 
+    fun legacyManager(): LegacyManager
+
     @Component.Builder
     interface Builder : Graph.Builder {
 
