@@ -13,6 +13,7 @@ dependencies {
     // Base Dependencies
     implementation(project(":base"))
     implementation(project(":graph"))
+    implementation(project(":architecture_presentation"))
 
     // User Session
     implementation(project(":user_session"))

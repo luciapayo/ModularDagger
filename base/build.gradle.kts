@@ -12,7 +12,6 @@ android {
 dependencies {
     // Base dependencies
     implementation(project(":graph"))
-    api(project(":architecture_presentation"))
 
     // Kotlin
     api(Dependencies.kotlin_stdlib_jdk7)
@@ -21,4 +20,7 @@ dependencies {
     // Dagger2
     api(Dependencies.dagger2)
     kapt(Dependencies.dagger2_compiler)
+
+    // AndroidX
+    api(Dependencies.app_compat)
 }

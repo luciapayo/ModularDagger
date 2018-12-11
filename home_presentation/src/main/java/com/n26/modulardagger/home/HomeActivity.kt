@@ -1,11 +1,11 @@
 package com.n26.modulardagger.home
 
 import android.os.Bundle
-import com.n26.modulardagger.architecture_presentation.actiivty.BaseInjectingActivity
 import com.n26.modulardagger.domain_data_1.domain.RetrieveDomainEntity1
 import com.n26.modulardagger.domain_data_2.domain.RetrieveDomainEntity2
+import com.n26.modulardagger.home.R.id.buttonLogOut
+import com.n26.modulardagger.home.R.id.tv
 import com.n26.modulardagger.user_session.domain.SendLogOut
-import kotlinx.android.synthetic.main.activity_home.*
 import javax.inject.Inject
 
 class HomeActivity : BaseInjectingActivity<HomeActivityComponent>() {

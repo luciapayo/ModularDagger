@@ -13,5 +13,5 @@ dependencies {
     implementation(project(":graph"))
 
     // AndroidX
-    api(Dependencies.app_compat)
+    implementation(Dependencies.app_compat)
 }

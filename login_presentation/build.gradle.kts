@@ -13,6 +13,7 @@ dependencies {
     // Base Dependencies
     implementation(project(":base"))
     implementation(project(":graph"))
+    implementation(project(":architecture_presentation"))
 
     // Feature dependencies
     implementation(project(":domain_3"))
