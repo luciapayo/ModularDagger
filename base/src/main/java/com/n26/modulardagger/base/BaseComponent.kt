@@ -22,12 +22,12 @@ interface BaseComponent : Graph {
     fun provideRetrofit(): Retrofit
 
     @Component.Builder
-    interface Builder : Graph.Builder {
+    interface Builder {
 
         @BindsInstance
         fun bind(app: Application): Builder
 
-        override fun build(): BaseComponent
+        fun build(): BaseComponent
     }
 }
 

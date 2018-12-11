@@ -14,9 +14,9 @@ internal interface UserSessionComponent : Graph {
     fun inject(userSession: UserSession)
 
     @Component.Builder
-    interface Builder : Graph.Builder {
+    interface Builder {
 
-        override fun build(): UserSessionComponent
+        fun build(): UserSessionComponent
     }
 }
 

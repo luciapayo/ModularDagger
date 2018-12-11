@@ -20,14 +20,14 @@ interface LoginActivityComponent : Graph {
     fun inject(activity: LoginActivity)
 
     @Component.Builder
-    interface Builder : Graph.Builder {
+    interface Builder {
 
         @BindsInstance
         fun bind(activity: AppCompatActivity): Builder
 
         fun domain3Component(component: Domain3Component): Builder
 
-        override fun build(): LoginActivityComponent
+        fun build(): LoginActivityComponent
     }
 }
 

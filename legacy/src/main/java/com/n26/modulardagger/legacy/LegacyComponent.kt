@@ -16,11 +16,11 @@ interface LegacyComponent : Graph {
     fun legacyManager(): LegacyManager
 
     @Component.Builder
-    interface Builder : Graph.Builder {
+    interface Builder {
 
         fun baseComponent(baseComponent: BaseComponent): Builder
 
-        override fun build(): LegacyComponent
+        fun build(): LegacyComponent
     }
 }
 

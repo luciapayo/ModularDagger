@@ -22,7 +22,7 @@ interface HomeActivityComponent : Graph {
     fun inject(activity: HomeActivity)
 
     @Component.Builder
-    interface Builder : Graph.Builder {
+    interface Builder {
 
         @BindsInstance
         fun bind(activity: AppCompatActivity): Builder
@@ -30,7 +30,7 @@ interface HomeActivityComponent : Graph {
         fun dataDomain1Component(component: DataDomain1Component): Builder
         fun dataDomain2Component(component: DataDomain2Component): Builder
 
-        override fun build(): HomeActivityComponent
+        fun build(): HomeActivityComponent
     }
 }
 

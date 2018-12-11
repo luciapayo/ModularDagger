@@ -18,11 +18,11 @@ interface DataDomain2Component : Graph {
     fun provideRepository2(): Repository2
 
     @Component.Builder
-    interface Builder : Graph.Builder {
+    interface Builder {
 
         fun baseComponent(component: BaseComponent): Builder
 
-        override fun build(): DataDomain2Component
+        fun build(): DataDomain2Component
     }
 }
 

@@ -17,11 +17,11 @@ interface AppComponent : Graph {
     fun inject(app: ModularDaggerApp)
 
     @Component.Builder
-    interface Builder : Graph.Builder {
+    interface Builder {
 
         fun baseComponent(component: BaseComponent): Builder
 
-        override fun build(): AppComponent
+        fun build(): AppComponent
     }
 }
 

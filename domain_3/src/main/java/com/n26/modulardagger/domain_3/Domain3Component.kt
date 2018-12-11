@@ -17,12 +17,12 @@ interface Domain3Component : Graph {
     fun retrieveDomainEntity3(): RetrieveDomainEntity3
 
     @Component.Builder
-    interface Builder : Graph.Builder {
+    interface Builder {
 
         fun legacyComponent(component: LegacyComponent): Builder
         fun dataDomain1Component(component: DataDomain1Component): Builder
 
-        override fun build(): Domain3Component
+        fun build(): Domain3Component
     }
 }
 
